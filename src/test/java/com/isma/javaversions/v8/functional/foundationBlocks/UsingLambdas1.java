@@ -2,14 +2,17 @@ package com.isma.javaversions.v8.functional.foundationBlocks;
 
 import org.junit.jupiter.api.Test;
 
-public class UsingLambdas {
+import java.util.List;
+
+public class UsingLambdas1 {
 
     // CLIENT ARTIFACT
     @Test
     public void usingFunctionalInterfaces(){
-        System.out.println(countStudentsApproved(kinderGardenRule, 5, 9, 3, 7, 6));
-        System.out.println(countStudentsApproved(elementarySchoolRule, 5, 9, 3, 7, 6));
-        System.out.println(countStudentsApproved(highSchoolRule, 5, 9, 3, 7, 6));
+        List<Integer> results = List.of(5,9,3,7,6);
+        System.out.println(countStudentsApproved(kinderGardenRule, results));
+        System.out.println(countStudentsApproved(elementarySchoolRule, results));
+        System.out.println(countStudentsApproved(highSchoolRule, results));
     }
 
 
@@ -28,7 +31,7 @@ public class UsingLambdas {
         boolean isApproved(Integer result);
     }
 
-    private int countStudentsApproved(StudentApprovedRule rule, Integer... results){
+    private int countStudentsApproved(StudentApprovedRule rule, List<Integer> results){
         int totalApproved = 0;
         for (Integer result : results) {
             if(rule.isApproved(result)){
@@ -46,5 +49,28 @@ public class UsingLambdas {
      * Liskov substitution principle applied
      * Interface segregation principle applied
      * Dependency inversion principle applied
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     * Not so fast :)
+     * Do we need to create new FunctionalInterface's everytime and everywhere?
+     *   code smell -> type's overpopulation hell
+     *      What can go wrong? -> Functional interfaces with different name but same contracts everywhere
+     *      repeated semantics carries unclear, not maintainable, and highly coupled code
      */
 }

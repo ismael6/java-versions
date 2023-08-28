@@ -2,20 +2,23 @@ package com.isma.javaversions.v8.functional.foundationBlocks;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 public class BeforeLambdas1 {
 
 
     // CLIENT ARTIFACT
     @Test
     public void duplicatedMethodsAsSmallInnerBehaviorChanges(){
-        System.out.println(countKinderGardenStudentsApproved(5,9,3,7,6));
+        List<Integer> results = List.of(5,9,3,7,6);
+        System.out.println(countKinderGardenStudentsApproved(results));
         System.out.println(countElementarySchoolStudentsApproved(5,9,3,7,6));
         System.out.println(countHighSchoolStudentsApproved(5,9,3,7,6));
     }
 
 
     // PROVIDER ARTIFACT
-    private int countKinderGardenStudentsApproved(Integer... results){
+    private int countKinderGardenStudentsApproved(List<Integer> results){
         int totalApproved = 0;
         for (Integer result : results) {
             if(result > 5){

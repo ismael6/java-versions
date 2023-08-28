@@ -2,6 +2,8 @@ package com.isma.javaversions.v8.functional.foundationBlocks;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static com.isma.javaversions.v8.functional.foundationBlocks.BeforeLambdas2.StudentType.*;
 
 public class BeforeLambdas2{
@@ -9,9 +11,10 @@ public class BeforeLambdas2{
     // CLIENT ARTIFACT
     @Test
     public void usingDiscriminatorValueToAvoidRepeatMethods(){
-        System.out.println(countStudentsApproved(KINDER_GARDEN, 5,9,3,7,6));
-        System.out.println(countStudentsApproved(ELEMENTARY_SCHOOL, 5,9,3,7,6));
-        System.out.println(countStudentsApproved(HIGH_SCHOOL, 5,9,3,7,6));
+        List<Integer> results = List.of(5,9,3,7,6);
+        System.out.println(countStudentsApproved(KINDER_GARDEN, results));
+        System.out.println(countStudentsApproved(ELEMENTARY_SCHOOL, results));
+        System.out.println(countStudentsApproved(HIGH_SCHOOL, results));
     }
 
 
@@ -21,7 +24,7 @@ public class BeforeLambdas2{
         ELEMENTARY_SCHOOL,
         HIGH_SCHOOL;
     }
-    private int countStudentsApproved(StudentType studentType, Integer... results){
+    private int countStudentsApproved(StudentType studentType, List<Integer> results){
         int totalApproved = 0;
         for (Integer result : results) {
             boolean approved = false;
