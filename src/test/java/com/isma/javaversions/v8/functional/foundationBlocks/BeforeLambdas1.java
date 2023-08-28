@@ -12,8 +12,8 @@ public class BeforeLambdas1 {
     public void duplicatedMethodsAsSmallInnerBehaviorChanges(){
         List<Integer> results = List.of(5,9,3,7,6);
         System.out.println(countKinderGardenStudentsApproved(results));
-        System.out.println(countElementarySchoolStudentsApproved(5,9,3,7,6));
-        System.out.println(countHighSchoolStudentsApproved(5,9,3,7,6));
+        System.out.println(countElementarySchoolStudentsApproved(results));
+        System.out.println(countHighSchoolStudentsApproved(results));
     }
 
 
@@ -28,7 +28,7 @@ public class BeforeLambdas1 {
         return totalApproved;
     }
 
-    private int countElementarySchoolStudentsApproved(Integer... results){
+    private int countElementarySchoolStudentsApproved(List<Integer> results){
         int totalApproved = 0;
         for (Integer result : results) {
             if(result > 6){
@@ -38,7 +38,7 @@ public class BeforeLambdas1 {
         return totalApproved;
     }
 
-    private int countHighSchoolStudentsApproved(Integer... results){
+    private int countHighSchoolStudentsApproved(List<Integer> results){
         int totalApproved = 0;
         for (Integer result : results) {
             if(result > 7){
