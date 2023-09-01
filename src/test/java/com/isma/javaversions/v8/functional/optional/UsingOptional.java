@@ -52,11 +52,6 @@ public class UsingOptional {
     }
 
     @Test
-    public void OptionalOperations(){
-        
-    }
-
-    @Test
     public void useOptionalInADeclarativeWay(){
         System.out.println(
             new PersonRepository().getPersonById(2)

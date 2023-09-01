@@ -25,7 +25,9 @@ public class BeforeOptional {
 
     class Person{
         String sendGreetings(){
-            return new Random().nextInt(2) == 1? "HI" : null;
+            return new Random().nextInt(2) == 1
+                    ? "HI"
+                    : null;
         }
     }
 
