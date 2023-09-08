@@ -2,6 +2,8 @@ package com.isma.javaversions.v8.functional.stream;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import java.util.*;
 
 public class BeforeStreams {
