@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class UsingStreams {
 
     @Test
-    public void getAllUniqueActorsUsingStreams(){
+    public void getAllUniqueActors(){
         CinemaDataProvider.getCinemaFromJson().getMovies()
         .stream()
         .map(Movie::getActors)

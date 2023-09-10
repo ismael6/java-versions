@@ -9,16 +9,16 @@ import java.util.*;
 public class BeforeStreams {
 
     @Test
-    public void getAllUniqueActorsBeforeStreams(){
-        List<String> uniqueActornames = new ArrayList<>();
+    public void getAllUniqueActors(){
+        List<String> uniqueActorNames = new ArrayList<>();
         for(Movie movie: CinemaDataProvider.getCinemaFromJson().getMovies()){
             for(Actor actor: movie.getActors()){
-                if(!uniqueActornames.contains(actor.getName())){
-                    uniqueActornames.add(actor.getName());
+                if(!uniqueActorNames.contains(actor.getName())){
+                    uniqueActorNames.add(actor.getName());
                 }
             }
         }
-        for(String name: uniqueActornames){
+        for(String name: uniqueActorNames){
             System.out.println(name);
         }
     }
