@@ -10,6 +10,7 @@ public class UsingStreams {
 
     @Test
     public void getAllUniqueActors(){
+
         CinemaDataProvider.getCinemaFromJson().getMovies()
         .stream()
         .map(Movie::getActors)
