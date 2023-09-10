@@ -1,29 +1,68 @@
 package com.isma.javaversions.v8.functional.stream.ondetail;
 
+import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Stream;
+
 /*
-    Stream<T>	filter(Predicate<? super T> predicate)
+    DONE Stream<T>	filter(Predicate<? super T> predicate)
 
-    <R> Stream<R>	flatMap(Function<? super T,? extends Stream<? extends R>> mapper)
+    DONE <R> Stream<R>	map(Function<? super T,? extends R> mapper)
 
-    DoubleStream	flatMapToDouble(Function<? super T,? extends DoubleStream> mapper)
+    DONE DoubleStream	mapToDouble(ToDoubleFunction<? super T> mapper)
 
-    IntStream	flatMapToInt(Function<? super T,? extends IntStream> mapper)
+    DONE IntStream	mapToInt(ToIntFunction<? super T> mapper)
 
-    LongStream	flatMapToLong(Function<? super T,? extends LongStream> mapper)
+    DONE LongStream	mapToLong(ToLongFunction<? super T> mapper)
 
-    <R> Stream<R>	map(Function<? super T,? extends R> mapper)
+    DONE <R> Stream<R>	flatMap(Function<? super T,? extends Stream<? extends R>> mapper)
 
-    DoubleStream	mapToDouble(ToDoubleFunction<? super T> mapper)
+    DONE DoubleStream	flatMapToDouble(Function<? super T,? extends DoubleStream> mapper)
 
-    IntStream	mapToInt(ToIntFunction<? super T> mapper)
+    DONE IntStream	flatMapToInt(Function<? super T,? extends IntStream> mapper)
 
-    LongStream	mapToLong(ToLongFunction<? super T> mapper)
+    DONE LongStream	flatMapToLong(Function<? super T,? extends LongStream> mapper)
 
     Stream<T>	peek(Consumer<? super T> action)
 
 
 * */
 public class StatelessIntermediateOperations {
+
+    @Test
+    public void filteringOps(){
+        Stream.of("Barbie the movie", "La La Land", "Cruella")
+            .filter(m -> m.split(" ").length > 1)
+            .forEach(System.out::println);
+    }
+
+    @Test
+    public void transformationOps(){
+        Stream.of("Barbie the movie", "La La Land", "Cruella")
+            .map(String::toUpperCase)
+            .forEach(System.out::println);
+
+        Stream.of(
+                Arrays.asList("Stevie", "Malcolm", "Lloyd"),
+                Arrays.asList("Hal", "Louis", "Craig"),
+                Arrays.asList("Richie", "Francis", "Spangler"))
+            .flatMap(Collection::stream)
+            .forEach(System.out::println);
+    }
+
+    @Test
+    public void debuggingOps(){
+        Stream.of("Barbie the movie", "La La Land", "Cruella")
+            .filter(m -> m.split(" ").length > 1)
+            .peek(System.out::println)
+            .map(String::length)
+            .forEach(System.out::println);
+    }
+
+
 
 
 }
