@@ -33,14 +33,15 @@ public class DataSourceOperations {
 
     @Test
     public void fromMutableElements() throws IOException {
-        Arrays.asList("1", "2", "3").stream()
+        Arrays.asList("1", "2", "3")
+                .stream()
                 .forEach(System.out::println);
         new HashSet() {{
             add(1);
             add(2);
             add(3);
         }}.stream()
-                .forEach(System.out::println);;
+                .forEach(System.out::println);
 
         new HashMap<>() {{
             put(1, "one");
@@ -62,9 +63,11 @@ public class DataSourceOperations {
         //Stream.iterate(1, n -> n + 2)
         //        .forEach(System.out::println); //prints infinite odd numbers
 
+
         Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1], t[0] + t[1]})
-                .limit(20)
+                .limit(10)
                 .map(t -> t[0])
                .forEach(System.out::println);
     }
+
 }
