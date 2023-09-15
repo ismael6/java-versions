@@ -2,6 +2,8 @@ package com.isma.javaversions.v8.functional.stream.ondetail;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.stream.Stream;
 
 public class StatefulIntermediateOperations {
@@ -38,5 +40,12 @@ public class StatefulIntermediateOperations {
                 Stream.of(1,2,3),
                 Stream.of(4,5,6))
                 .forEach(System.out::println);
+
+        Stream.of(
+                Arrays.asList("Stevie", "Malcolm", "Lloyd"),
+                Arrays.asList("Hal", "Louis", "Craig"),
+                Arrays.asList("Richie", "Francis", "Spangler"))
+        .flatMap(Collection::stream)
+        .forEach(System.out::println);
     }
 }

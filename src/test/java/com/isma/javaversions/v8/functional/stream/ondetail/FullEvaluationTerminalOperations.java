@@ -2,20 +2,15 @@ package com.isma.javaversions.v8.functional.stream.ondetail;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.DoubleSummaryStatistics;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class TerminalOperations {
+public class FullEvaluationTerminalOperations {
 
     @Test
     public void getSomeElement(){
-        System.out.println(Stream.of(1,2,3,4,5)
-                .findFirst());
-
-        System.out.println(Stream.of(1,2,3,4,5)
-                .findAny());
-
         System.out.println(Stream.of(1,2,3,4,5)
                 .max(Integer::compareTo));
 
@@ -30,18 +25,6 @@ public class TerminalOperations {
 
         Stream.of(1,2,3,4,5)
                 .forEachOrdered(System.out::println);
-    }
-
-    @Test
-    public void discriminating(){
-        System.out.println(Stream.of(1,2,3,4,5)
-                .allMatch(n -> n < 5));
-
-        System.out.println(Stream.of(1,2,3,4,5)
-                .noneMatch(n -> n < 5));
-
-        System.out.println(Stream.of(1,2,3,4,5)
-                .anyMatch(n -> n < 5));
     }
 
     @Test

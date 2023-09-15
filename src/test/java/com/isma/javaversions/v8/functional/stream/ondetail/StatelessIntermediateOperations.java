@@ -21,13 +21,6 @@ public class StatelessIntermediateOperations {
         Stream.of("Barbie the movie", "La La Land", "Cruella")
             .map(String::toUpperCase)
             .forEach(System.out::println);
-
-        Stream.of(
-                Arrays.asList("Stevie", "Malcolm", "Lloyd"),
-                Arrays.asList("Hal", "Louis", "Craig"),
-                Arrays.asList("Richie", "Francis", "Spangler"))
-            .flatMap(Collection::stream)
-            .forEach(System.out::println);
     }
 
     @Test
