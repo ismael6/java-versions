@@ -60,8 +60,8 @@ public class DataSourceOperations {
         //Stream.generate(() -> Math.random())
         //        .forEach(System.out::println); //prints infinite random numbers
 
-        //Stream.iterate(1, n -> n + 2)
-        //        .forEach(System.out::println); //prints infinite odd numbers
+        Stream.iterate(1, n -> n + 2)
+                .forEach(System.out::println); //prints infinite odd numbers
 
 
         Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1], t[0] + t[1]})
