@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 
 /**
@@ -64,5 +65,33 @@ public class TheFiles {
         for(String line: lines) {
             System.out.println(line);
         }
+    }
+
+    @Test
+    public void getReadAttributes() throws IOException {
+        Path path = Paths.get(".").toRealPath();
+
+        BasicFileAttributes attributes =
+                Files.readAttributes(path, BasicFileAttributes.class);
+
+        System.out.println("path -> "+path);
+        System.out.println("isDirectory -> "+attributes.isDirectory());
+        System.out.println("isRegularFile -> "+attributes.isRegularFile());
+        System.out.println("isSymbolicLink -> "+attributes.isSymbolicLink());
+        System.out.println("isOther -> "+attributes.isOther());
+
+        System.out.println("size on bytes -> "+attributes.size());
+
+        System.out.println("creationTime -> "+attributes.creationTime());
+        System.out.println("lastAccessTime -> "+attributes.lastAccessTime());
+        System.out.println("lastModifiedTime -> "+attributes.lastModifiedTime());
+        System.out.println("fileKey -> "+attributes.fileKey());
+    }
+
+    @Test
+    public void writeToFile() throws IOException {
+        Path theFile = Files.createFile(Paths.get("./someNewFileOnRootProject.txt"));
+        String messageToWrite = "some text to write";
+        Files.writeString(theFile, messageToWrite);
     }
 }
