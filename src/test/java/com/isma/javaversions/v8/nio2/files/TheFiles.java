@@ -59,15 +59,6 @@ public class TheFiles {
     }
 
     @Test
-    public void readAllLines() throws IOException {
-        Path path = Paths.get("./src/test/resources/cinema.json");
-        List<String> lines = Files.readAllLines(path);
-        for(String line: lines) {
-            System.out.println(line);
-        }
-    }
-
-    @Test
     public void getReadAttributes() throws IOException {
         Path path = Paths.get(".").toRealPath();
 
@@ -86,6 +77,15 @@ public class TheFiles {
         System.out.println("lastAccessTime -> "+attributes.lastAccessTime());
         System.out.println("lastModifiedTime -> "+attributes.lastModifiedTime());
         System.out.println("fileKey -> "+attributes.fileKey());
+    }
+
+    @Test
+    public void readAllLines() throws IOException {
+        Path path = Paths.get("./src/test/resources/cinema.json");
+        List<String> lines = Files.readAllLines(path);
+        for(String line: lines) {
+            System.out.println(line);
+        }
     }
 
     @Test
