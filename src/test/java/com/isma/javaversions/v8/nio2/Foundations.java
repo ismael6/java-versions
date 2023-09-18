@@ -5,7 +5,6 @@ package com.isma.javaversions.v8.nio2;
  *	FileSystem -> Reads and writes data within a computer
  *
  *	File -> A record within a fileSystem that stores user and system data
- *
  *	Directory -> A record within a fileSystem that contains files and directories
  *	Root directory -> Topmost directory on fileSystem
  *

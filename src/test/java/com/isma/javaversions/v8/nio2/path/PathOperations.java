@@ -30,7 +30,7 @@ public class PathOperations {
             System.out.println("parent: " + parent);
         }
 
-        Path path2 = Paths.get("/zero/one/two.txt");
+        Path path2 = Paths.get("zero/one/two.txt");
 
         System.out.println("from 0 to 2: "+path2.subpath(0, 3)); // including first element and excluding last element
         System.out.println("from 0 to 1: "+path2.subpath(0, 2));
@@ -66,32 +66,10 @@ public class PathOperations {
 
 //		absolute paths
         System.out.println();
-        Path absolute1 = Paths.get("c:/files/file.txt");
-        Path absolute2 = Paths.get("c:/info.txt");
+        Path absolute1 = Paths.get("/files/file.txt");
+        Path absolute2 = Paths.get("/info.txt");
         System.out.println(absolute1.relativize(absolute2));
         System.out.println(absolute2.relativize(absolute1));
-
-//		absolute vs relative RUNTIME EXCEPTION
-//		Path absolute3 = Paths.get("/files/file.txt");
-//		Path relative3 = Paths.get("info.txt");
-//		System.out.println(absolute3.relativize(relative3));
-
-//		absolutes with different root RUNTIME EXCEPTION
-//		Path absolute4 = Paths.get("c:/files/file.txt");
-//		Path absolute5 = Paths.get("info.txt");
-//		System.out.println(absolute4.relativize(absolute5));
-    }
-
-    @Test
-    public void pathResolve() {
-        Path absolutePath1 = Paths.get("/user");
-        Path absolutePath2 = Paths.get("/system");
-        Path relativePath1 = Paths.get("../file.txt");
-        Path relativePath2 = Paths.get("docs/doc.txt");
-        System.out.println(absolutePath1.resolve(relativePath1)); // absolute.resolve(relative) -> join paths
-        System.out.println(relativePath1.resolve(relativePath2)); // relative.resolve(relative) -> join paths
-        System.out.println(relativePath1.resolve(absolutePath1)); // relative.resolve(absolute) -> return absolute path
-        System.out.println(absolutePath1.resolve(absolutePath2)); // absolute.resolve(absolute) -> return second absolute path
     }
 
     @Test
