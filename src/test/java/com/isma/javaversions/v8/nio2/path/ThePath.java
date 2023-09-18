@@ -43,7 +43,7 @@ public class ThePath {
 
 //		using URI
 //		Path pathURI1 = Paths.get(new URI("file://user/file.txt")); // runtime exception URIs must have absolute paths
-//      Path pathURI2 = Paths.get(new URI("file:///c:/user/files")); // ok, full path on URI (windows)
+//      Path pathURI2 = Paths.get(new URI("file://c:/user/files")); // ok, full path on URI (windows)
         Path pathURI3 = Paths.get(new URI("file:///home/isma/file.txt")); // ok, full path on URI (unix)
 
 //		from a File Object
