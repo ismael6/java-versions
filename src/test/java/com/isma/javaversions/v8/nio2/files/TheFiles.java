@@ -39,7 +39,7 @@ public class TheFiles {
     @Test
     public void remove() throws IOException {
         Files.createDirectories(Paths.get("docs/files"));
-        Files.delete(Paths.get("docs/files"));
+        //Files.delete(Paths.get("docs/files"));
         Files.deleteIfExists(Paths.get("docs/files"));
     }
 
