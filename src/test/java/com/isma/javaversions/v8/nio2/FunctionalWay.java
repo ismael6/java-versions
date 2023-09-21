@@ -23,8 +23,8 @@ public class FunctionalWay {
     @Test
     public void find() throws IOException {
         Files.find(
-                        Paths.get("./src/").toRealPath(),
-                        6,
+                        Paths.get("./src/"),
+                        12,
                         (path, attributes) -> path.toString().endsWith(".java") && attributes.isRegularFile())
                 .forEach(System.out::println);
     }
