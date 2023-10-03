@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 public class ProcessApi {
 
     @Test
-    public void getAllProcess(){
+    public void getAllProcess() {
         ProcessHandle.allProcesses()
-                .map(ProcessHandle::info)
-                .forEach(System.out::println);
+            .map(ProcessHandle::info)
+            .forEach(System.out::println);
     }
 
     @Test
@@ -20,5 +20,14 @@ public class ProcessApi {
         System.out.println(procInfo.commandLine());
         System.out.println(procInfo.startInstant());
         System.out.println(procInfo.totalCpuDuration());
+    }
+
+    @Test
+    public void parentProcess() {
+        ProcessHandle process = ProcessHandle.current();
+        do{
+            System.out.println(process.info());
+            process = process.parent().orElse(null);
+        } while (process != null);
     }
 }
