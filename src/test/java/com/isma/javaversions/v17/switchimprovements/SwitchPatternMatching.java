@@ -11,9 +11,9 @@ public class SwitchPatternMatching {
         } else if (o instanceof Long l) {
             formatted = String.format("long %d", l);
         } else if (o instanceof Double d) {
-            formatted = String.format("double %d", d);
+            formatted = String.format("double %s", d);
         } else if (o instanceof String s) {
-            formatted = String.format("String %d", s);
+            formatted = String.format("String %s", s);
         }
         return formatted;
     }

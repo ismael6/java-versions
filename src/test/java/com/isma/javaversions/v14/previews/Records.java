@@ -70,7 +70,6 @@ public class Records {
         System.out.println(p.equals(p));
     }
 
-
     @Test
     public void recordsOnDetail() {
         record Person(String name, int age) implements Serializable { } //can implement interfaces
