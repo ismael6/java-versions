@@ -20,7 +20,7 @@ public class GuardedPatterns {
     public String usingGuardedPatterns(Object o){
         return switch(o) {
             case String s when s.length() == 1 -> String.format("char %s", s);
-            case String s -> String.format("any String %s", s);
+            case String s -> String.format("word %s", s);
             default -> String.format("any ", o.toString());
         };
     }
