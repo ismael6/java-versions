@@ -28,13 +28,13 @@ import java.util.concurrent.locks.LockSupport;
  *          IDLE state -> goes to the heap
  *          Working state -> Use some platform thread as work station
  *      Living in heap memory
- *      Kbs size
+ *      Kbs size vs MBs
  *      Almost instantaneous initialization
  */
 public class VirtualThreads {
 
     @Test
-    public void before(){
+    public void before() throws InterruptedException {
         var counter = new AtomicInteger();
         var i = 0;
         while(i < 1_500_000){
@@ -52,7 +52,7 @@ public class VirtualThreads {
     public void virtualThreads(){
         var counter = new AtomicInteger();
         var i = 0;
-        while(i < 1_500_000){
+        while(i < 2_500_000){
             Thread.startVirtualThread(()-> {
                 int count = counter.incrementAndGet();
                 System.out.println("Thread: " + count);
